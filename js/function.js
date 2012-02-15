@@ -25,7 +25,7 @@ $(function(){
 	//localStorageに都道府県・エリア情報有り
 	if(localStorage.pref !== undefined && localStorage.area !== undefined){
 		$('input[type=submit]').attr('value','再選択');
-		$('input[type=submit]').removeAttr('class');
+		$('input[type=submit]').removeClass('check');
 		$('input[type=submit]').removeAttr('disabled');
 	}
 
@@ -53,7 +53,7 @@ $(function(){
 
 		if(selectedArea !== ''){
 			$(this).siblings('input[type=submit]').attr('value','確認する');
-			$(this).siblings('input[type=submit]').removeAttr('class');
+			$(this).siblings('input[type=submit]').removeClass('check');
 			$(this).siblings('input[type=submit]').addClass('check');
 			$(this).siblings('input[type=submit]').removeAttr('disabled');
 		}
@@ -76,15 +76,18 @@ $(function(){
 			$('select').children('option:first-child').attr('selected','selected');
 			$(this).attr('disabled','disabled');
 			$(this).attr('value','都道府県を選択してね');
+			$('select').removeAttr('disabled');
 		}
 	});
 
 	$('form').submit(function(){
 		localStorage.pref = selectedPref;
 		localStorage.area = selectedArea;
+			$("#pref").attr('disabled','disabled');
+			$("#area").attr('disabled','disabled');
 		if($('input[type=submit]').hasClass('check')){
 		$('input[type=submit]').attr('value','再選択');
-		$('input[type=submit]').removeAttr('class');
+		$('input[type=submit]').removeClass('check');
 		} else {
 		}
 		return false;
