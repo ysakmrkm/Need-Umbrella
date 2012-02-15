@@ -53,7 +53,6 @@ $(function(){
 
 		if(selectedArea !== ''){
 			$(this).siblings('input[type=submit]').attr('value','確認する');
-			//$(this).siblings('input[type=submit]').remove('class');
 			$(this).siblings('input[type=submit]').addClass('check');
 			$(this).siblings('input[type=submit]').removeAttr('disabled');
 		}
