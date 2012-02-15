@@ -83,6 +83,7 @@ $(function(){
 		localStorage.area = selectedArea;
 		if($('input[type=submit]').hasClass('check')){
 		$('input[type=submit]').attr('value','再選択');
+		$('input[type=submit]').removeClass('check');
 		} else {
 		}
 		return false;
