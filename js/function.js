@@ -81,6 +81,8 @@ $(function(){
 	$('form').submit(function(){
 		localStorage.pref = selectedPref;
 		localStorage.area = selectedArea;
+		$("#pref").attr('disabled','disabled');
+		$("#area").attr('disabled','disabled');
 		if($('input[type=submit]').hasClass('check')){
 		$('input[type=submit]').attr('value','再選択');
 		$('input[type=submit]').removeClass('check');
